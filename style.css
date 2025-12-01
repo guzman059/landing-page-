@@ -1,0 +1,452 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    /* Fundo mais escuro com tom de roxo moderno à direita */
+    background: linear-gradient(135deg, #0b062d 0%, #1a0f4d 50%, #3a1f7d 100%);
+    color: #fff;
+    overflow: hidden;
+}
+
+header{
+    position: fixed;
+    width: 90vw;
+    top: 0;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+}
+
+.logo{
+    font-family: "Orbitron", sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #00f7ff;
+    /* Ajustando sombra para dar mais destaque */
+    text-shadow: 0 0 15px rgba(0, 247, 255, 0.7);
+}
+
+header nav ul{
+    display: flex;
+    gap: 48px;
+}
+
+header nav ul li{
+    cursor: pointer;
+    position: relative;
+    padding: 5px 0;
+}
+
+header nav ul li::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00f7ff;
+    transition: width 0.5s ease;
+}
+
+header nav ul li:hover:after{
+    width: 100%;
+}
+
+.container{
+    height: 100vh;
+    position: relative;
+    /* Fundo container igual ao body */
+    background: linear-gradient(135deg, #0b062d 0%, #1a0f4d 50%, #3a1f7d 100%);
+    overflow: hidden;
+}
+
+.container::before{
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    /* Radial pulse com maior contraste */
+    background: radial-gradient(circle, rgba(0,247,255,0.4) 0%, rgba(15,15,30,0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(60px);
+    z-index: 1;
+    animation: pulse 4s infinite alternate;
+}
+
+@keyframes pulse{
+    0%{
+        opacity: 0.6;
+        transform: translate(-50%,-50%) scale(0.8);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-50%,-50%) scale(1.5);
+    }
+}
+
+
+.list{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.item{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: 2;
+
+    /*animacao*/
+    transform: translate(100vw);
+}
+
+.active{
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+}
+
+.product_img{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+
+     /*animacao*/
+
+     transform: translateX(400px);
+     opacity: 0;
+     transition: transform 0.6s ease, opacity;
+     transition-delay: 0.5s;
+}
+
+.active .product_img {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.product_img img{
+    max-width: 80%;
+    max-height: 60%;
+    filter: drop-shadow(0 0 30px rgba(0,247,255,0.3));
+}
+
+.content{
+    width: 55%;
+    padding-right: 80px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 5;
+}
+
+
+.tag_produto{
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #00f7ff;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.product_name{
+    font-size: 4.5rem;
+    font-family: "Orbitron", sans-serif;
+    line-height: 1.1;
+    margin: 20px;
+    /*animacao*/
+
+     transform: translateX(400px);
+     opacity: 0;
+     transition: transform 0.6s ease, opacity;
+     transition-delay: 0.5s;
+}
+
+.active .product_name {
+    transform: translateX(0);
+    opacity: 1;
+}
+    
+.description{
+    font-size: 1.1rem;
+    color: #b8b8d0;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 600px;
+    /*animacao*/
+
+     transform: translateX(400px);
+     opacity: 0;
+     transition: transform 0.6s ease, opacity;
+     transition-delay: 0.5s;
+}
+
+.active .description {
+    transform: translateX(0);
+    opacity: 1;
+}
+    
+
+
+.btn {
+    background-color: #1a0f4d;      /* fundo escuro */
+    color: #00f7ff;                 /* texto neon azul */
+    border: 2px solid #00f7ff;      /* borda neon */
+    border-radius: 8px;             /* cantos arredondados */
+    padding: 12px 24px;             /* espaçamento interno */
+    font-size: 1rem;                /* tamanho da fonte */
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #00f7ff;      /* fundo azul neon */
+    color: #1a0f4d;                 /* texto escuro */
+    box-shadow: 0 0 11px #00f7ff;   
+}
+
+
+.arrows{
+    position: absolute;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.container {
+    position: relative; /* referência para os botões absolutos */
+}
+
+.arrows {
+    position: absolute;
+    top: 50%; /* centraliza verticalmente */
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* coloca um na esquerda e outro na direita */
+    transform: translateY(-50%); /* ajuste exato no centro */
+}
+
+.arrow_btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0,247,255,0.3);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow_btn:hover{ background-color: rgba(0, 247, 255, 0.2); border-color: #00f7ff; }
+
+.indicators{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 5;
+}
+.dots{
+    display: flex;
+    gap: 10px;
+}
+
+.dot{
+    width: 40px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+}
+
+.dot.active {
+    background-color: #00f7ff;
+    box-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+}
+
+
+
+/* =======================
+   RESPONSIVIDADE MOBILE
+========================== */
+
+@media (max-width: 900px) {
+
+  body { 
+    overflow-y: auto; 
+  }
+
+  /* HEADER AJUSTADO — sem corte no topo */
+  header { 
+    padding: 26px 18px 18px !important; /* mais espaço em cima */
+    width: 100%; 
+  }
+
+  /* reduzir um pouco a logo para caber melhor */
+  header .logo {
+    transform: scale(0.60);
+    transform-origin: left top;
+  }
+
+  header nav {
+    gap: 20px;
+  }
+
+  /* aumentar o espaço antes do slider começar */
+  .container {
+    height: auto;
+    padding-top: 130px; /* antes 110px */
+    overflow: visible;
+  }
+
+
+  .list {
+    width: 100%;
+    position: relative;
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  /* itens */
+  .item {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 18px 0 30px;
+    transform: none !important;
+    opacity: 1 !important;
+    z-index: 2;
+  }
+
+  .item.active {
+    display: flex;
+  }
+
+  /* imagem */
+  .product_img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 14px;
+    padding-top: 6px;
+  }
+
+  .product_img img {
+    width: min(84%, 380px);
+    height: auto;
+    max-height: 55vh;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(0,247,255,0.25));
+  }
+
+  /* conteúdo */
+  .content {
+    width: 100%;
+    padding: 0 20px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tag_produto { font-size: 0.85rem; margin-bottom: 6px; }
+
+  .product_name {
+    font-size: 2.2rem;
+    margin: 8px 0;
+    line-height: 1.05;
+  }
+
+  .description {
+    font-size: 1rem;
+    color: #b8b8d0;
+    line-height: 1.6;
+    max-width: 92%;
+    margin-bottom: 16px;
+  }
+
+  .btn { margin-top: 8px; }
+
+  /* SETAS — reposicionadas para não ficarem sobre o texto */
+  .arrows {
+    position: absolute;
+    top: 42%; /* <-- antes era 48%, agora está alinhado certinho */
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 14px;
+    transform: translateY(-50%);
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .arrow_btn {
+    pointer-events: auto;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+  }
+
+  /* indicadores */
+  .indicators {
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    z-index: 6;
+  }
+
+  .dot { 
+    width: 26px; 
+    height: 4px; 
+    border-radius: 2px; 
+  }
+
+  html, body, .container, .list { 
+    max-width: 100%; 
+    overflow-x: hidden; 
+  }
+}
+
+

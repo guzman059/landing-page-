@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Store</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Gz Store</div>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Produtos</li>
+                <li>Contato</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <div class="list">
+            <div class="item active">
+                <div class="product_img">
+                    <img src="./img/6503856f94473-iPhone 15 Pro.png" alt="iphone" id="img_iphone">
+                </div>
+                <div class="content">
+                    <p class="tag_produto">Novo Lançamento</p>
+                    <p class="product_name">Iphone 16 Pro Max</p>
+                    <p class="description">O iPhone 16 Pro Max é o modelo mais avançado da Apple, com tela OLED de 6,9
+                        polegadas, chip A18 Pro para alto desempenho e um sistema de câmeras de 48 MP que entrega fotos
+                        e vídeos profissionais. Ele traz design em titânio, bateria de longa duração, resistência à água
+                        e recursos inteligentes que melhoram produtividade e uso diário.</p>
+                     <button class="btn">Saiba Mais</button>
+                </div>
+
+            </div>
+
+            <div class="item">
+                <div class="product_img">
+                    <img src="./img/apple-watch.png" alt="apple-watch">
+                </div>
+                <div class="content">
+                    <p class="tag_produto">Novo Lançamento</p>
+                    <p class="product_name">Apple Watch 10</p>
+                    <p class="description">O Apple Watch 10 é o smartwatch mais recente da Apple, com tela maior e mais
+                        brilhante, design fino e leve em alumínio ou titânio, e recarga rápida. Ele oferece
+                        monitoramento avançado de saúde, incluindo frequência cardíaca, oxigênio no sangue e sono, além
+                        de recursos inteligentes e integração com o sistema mais recente da Apple.</p>
+                  <button class="btn">Saiba Mais</button>
+
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="product_img">
+                    <img src="./img/air-pods.png" alt="air-pods">
+                </div>
+                <div class="content">
+                    <p class="tag_produto">Som Premium</p>
+                    <p class="product_name">Air pods Max</p>
+                    <p class="description">O AirPods Max é o fone de ouvido premium da Apple, com design
+                        circum-auricular confortável, cancelamento ativo de ruído, modo ambiente e áudio espacial com
+                        rastreamento de cabeça. Ele oferece som de alta qualidade, bateria de até 20 horas e integração
+                        perfeita com dispositivos Apple.</p>
+                 <button class="btn">Saiba Mais</button>
+            </div>
+        </div>
+
+        <div class="arrows">
+            <button class="arrow_btn" id="prev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
+                    class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                    <path
+                        d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                </svg>
+            </button>
+
+            <button class="arrow_btn" id="next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
+                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                    <path
+                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="indicators">
+            <div class="dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
